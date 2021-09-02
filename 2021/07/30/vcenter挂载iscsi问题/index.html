@@ -20,15 +20,26 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Mr.zhang">
-<meta property="og:url" content="http://example.com/tags/test/index.html">
+  <meta name="description" content="Q：碰到vcenter挂载的ISCSI存储服务挂了以后，ISCSI存储也挂了，但是数据存储服务器起来后，vcenter上扫描存储依然没有起来。  表现如下（灰色状态）：  尝试将链路全部删掉，lun卷依然存在，如下 将万兆网卡替换、刷新适配器、重新扫描存储依然不能解决 ssh登录esxi上准备找找相关服务进程、分析，看看有没有remove或者kill这个存储lun的相关信息。 心里打算重启设备（很">
+<meta property="og:type" content="article">
+<meta property="og:title" content="venter挂载iscsi问题">
+<meta property="og:url" content="http://example.com/2021/07/30/vcenter%E6%8C%82%E8%BD%BDiscsi%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="Mr.zhang">
+<meta property="og:description" content="Q：碰到vcenter挂载的ISCSI存储服务挂了以后，ISCSI存储也挂了，但是数据存储服务器起来后，vcenter上扫描存储依然没有起来。  表现如下（灰色状态）：  尝试将链路全部删掉，lun卷依然存在，如下 将万兆网卡替换、刷新适配器、重新扫描存储依然不能解决 ssh登录esxi上准备找找相关服务进程、分析，看看有没有remove或者kill这个存储lun的相关信息。 心里打算重启设备（很">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2021/07/30/vcenter%E6%8C%82%E8%BD%BDiscsi%E9%97%AE%E9%A2%98/image-20210730144822118.png">
+<meta property="og:image" content="http://example.com/2021/07/30/vcenter%E6%8C%82%E8%BD%BDiscsi%E9%97%AE%E9%A2%98/image-20210730145358108.png">
+<meta property="og:image" content="http://example.com/2021/07/30/vcenter%E6%8C%82%E8%BD%BDiscsi%E9%97%AE%E9%A2%98/image-20210730145601172.png">
+<meta property="og:image" content="http://example.com/2021/07/30/vcenter%E6%8C%82%E8%BD%BDiscsi%E9%97%AE%E9%A2%98/image-20210730145908336.png">
+<meta property="og:image" content="http://example.com/2021/07/30/vcenter%E6%8C%82%E8%BD%BDiscsi%E9%97%AE%E9%A2%98/image-20210730150041455.png">
+<meta property="article:published_time" content="2021-07-30T06:44:15.245Z">
+<meta property="article:modified_time" content="2021-08-31T07:02:57.983Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="VMware">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/07/30/vcenter%E6%8C%82%E8%BD%BDiscsi%E9%97%AE%E9%A2%98/image-20210730144822118.png">
 
-<link rel="canonical" href="http://example.com/tags/test/">
+<link rel="canonical" href="http://example.com/2021/07/30/vcenter%E6%8C%82%E8%BD%BDiscsi%E9%97%AE%E9%A2%98/">
 
 
 <script id="page-configurations">
@@ -36,12 +47,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>标签: test | Mr.zhang</title>
+  <title>venter挂载iscsi问题 | Mr.zhang</title>
   
 
 
@@ -149,51 +160,112 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">test
-          <small>标签</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/30/vcenter%E6%8C%82%E8%BD%BDiscsi%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Mr.zhang">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          venter挂载iscsi问题
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-07-30 14:44:15" itemprop="dateCreated datePublished" datetime="2021-07-30T14:44:15+08:00">2021-07-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-31 15:02:57" itemprop="dateModified" datetime="2021-08-31T15:02:57+08:00">2021-08-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+        <p>Q：碰到vcenter挂载的ISCSI存储服务挂了以后，ISCSI存储也挂了，但是数据存储服务器起来后，vcenter上扫描存储依然没有起来。</p>
+<ul>
+<li><p>表现如下（灰色状态）：</p>
+<ul>
+<li>尝试将链路全部删掉，lun卷依然存在，如下</li>
+<li>将万兆网卡替换、刷新适配器、重新扫描存储依然不能解决</li>
+<li>ssh登录esxi上准备找找相关服务进程、分析，看看有没有remove或者kill这个存储lun的相关信息。</li>
+<li>心里打算重启设备（很头疼，上面都是生产环境，但没有可用资源用于迁移）</li>
+</ul>
+<img src="/2021/07/30/vcenter%E6%8C%82%E8%BD%BDiscsi%E9%97%AE%E9%A2%98/image-20210730144822118.png" class="" title="image-20210730144822118">
+
+<img src="/2021/07/30/vcenter%E6%8C%82%E8%BD%BDiscsi%E9%97%AE%E9%A2%98/image-20210730145358108.png" class="" title="image-20210730145358108"></li>
+<li><p>最后尝试</p>
+<ul>
+<li>发现卸载不掉，报错。想着，整个卷我都删除了怎么还在使用？最后突然灵光一动，应该是使用这个卷的虚拟机没关机！！</li>
+<li>最后把相关的虚拟机关机后，正常可以卸载</li>
+<li>然后添加链路、动态发现等ISCSI配置，正常！</li>
+<li>重新扫描存储、刷新一下就恢复了</li>
+<li>虚拟机系统是本地存储盘，但数据存放用的是ISCSI的存储卷</li>
+</ul>
+<img src="/2021/07/30/vcenter%E6%8C%82%E8%BD%BDiscsi%E9%97%AE%E9%A2%98/image-20210730145601172.png" class="" title="image-20210730145601172">
+
+<img src="/2021/07/30/vcenter%E6%8C%82%E8%BD%BDiscsi%E9%97%AE%E9%A2%98/image-20210730145908336.png" class="" title="image-20210730145908336">
+
+<img src="/2021/07/30/vcenter%E6%8C%82%E8%BD%BDiscsi%E9%97%AE%E9%A2%98/image-20210730150041455.png" class="" title="image-20210730150041455"></li>
+</ul>
+<p>PS：像这种问题会有各种各样的，前面主要是都没有报错，所以无法正确去判断，当然对于vcenter6.7的操作还是少了。多观察、多累计经验、多记录、多操作。</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-07-16T14:36:32+08:00"
-              content="2021-07-16">
-          07-16
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/VMware/" rel="tag"># VMware</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/07/16/%E6%B5%8B%E8%AF%95%E4%BB%AA/" itemprop="url">
-            <span itemprop="name">测试仪</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/07/30/exsi%E9%80%9F%E7%94%A8%E5%91%BD%E4%BB%A4%E5%92%8C%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" rel="next" title="exsi速用命令和常见问题">
+      exsi速用命令和常见问题 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
@@ -259,20 +331,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-          
-        <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

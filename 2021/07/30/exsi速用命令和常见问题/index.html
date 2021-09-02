@@ -20,28 +20,35 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Mr.zhang">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="修改root password vicfg-user –url https:&#x2F;&#x2F;esxi-host&#x2F;sdk&#x2F;webService –username root –password [old-pwd] -u root -e user -l root -o modify -p [new-pwd] esxcli hardware – 想获取ESXi主机的硬件及配置信息时，esxcli硬件命名空间就能够派">
+<meta property="og:type" content="article">
+<meta property="og:title" content="exsi速用命令和常见问题">
+<meta property="og:url" content="http://example.com/2021/07/30/exsi%E9%80%9F%E7%94%A8%E5%91%BD%E4%BB%A4%E5%92%8C%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="Mr.zhang">
+<meta property="og:description" content="修改root password vicfg-user –url https:&#x2F;&#x2F;esxi-host&#x2F;sdk&#x2F;webService –username root –password [old-pwd] -u root -e user -l root -o modify -p [new-pwd] esxcli hardware – 想获取ESXi主机的硬件及配置信息时，esxcli硬件命名空间就能够派">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://res-static.hc-cdn.cn/fms/img/364dc80c979bff21f2f06c5ea6449d5c1603428010473.gif">
+<meta property="article:published_time" content="2021-07-30T08:05:03.624Z">
+<meta property="article:modified_time" content="2021-07-30T08:06:36.535Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="esxi">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://res-static.hc-cdn.cn/fms/img/364dc80c979bff21f2f06c5ea6449d5c1603428010473.gif">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2021/07/30/exsi%E9%80%9F%E7%94%A8%E5%91%BD%E4%BB%A4%E5%92%8C%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>Mr.zhang</title>
+  <title>exsi速用命令和常见问题 | Mr.zhang</title>
   
 
 
@@ -149,97 +156,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/08/31/Samba%E5%8A%A0AD%E5%9F%9F%E7%AE%A1%E7%90%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.zhang">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/08/31/Samba%E5%8A%A0AD%E5%9F%9F%E7%AE%A1%E7%90%86/" class="post-title-link" itemprop="url">Samba加ad域管理</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-08-31 15:37:52 / 修改时间：17:01:07" itemprop="dateCreated datePublished" datetime="2021-08-31T15:37:52+08:00">2021-08-31</time>
-            </span>
-
-          
-
-        </div>
-      </header>
 
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li><p>安装软件包</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install pam_krb5* krb5-libs* krb5-workstation* krb5-devel* krb5-auth samba samba-winbind* samba-client* samba-swat* bind-utils</span><br></pre></td></tr></table></figure></li>
-<li><p>把服务都先启动</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start winbind smb nmb</span><br></pre></td></tr></table></figure></li>
-<li><p>配置</p>
-<ul>
-<li><p>改host名称</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hostnamectl set-hostname idcfileserver</span><br></pre></td></tr></table></figure></li>
-<li><p>添加域DNS</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/sysconfig/network-scripts/ifcfg-eth0</span><br><span class="line">```</span><br><span class="line">DNS2=10.10.4.2</span><br></pre></td></tr></table></figure></li>
-<li><p>配置krb5</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">[root@smbszsandstone ~]<span class="comment"># cat /etc/krb5.conf</span></span><br><span class="line"><span class="comment"># Configuration snippets may be placed in this directory as well</span></span><br><span class="line">includedir /etc/krb5.conf.d/</span><br><span class="line"></span><br><span class="line"><span class="comment">#includedir /var/lib/sss/pubconf/krb5.include.d/</span></span><br><span class="line">[logging]</span><br><span class="line"> default = FILE:/var/<span class="built_in">log</span>/krb5libs.log</span><br><span class="line"> kdc = FILE:/var/<span class="built_in">log</span>/krb5kdc.log</span><br><span class="line"> admin_server = FILE:/var/<span class="built_in">log</span>/kadmind.log</span><br><span class="line"></span><br><span class="line">[libdefaults]</span><br><span class="line"> dns_lookup_realm = <span class="literal">true</span></span><br><span class="line"> dns_lookuo_kdc = <span class="literal">true</span></span><br><span class="line"> ticket_lifetime = 24h</span><br><span class="line"> renew_lifetime = 7d</span><br><span class="line"> forwardable = <span class="literal">true</span></span><br><span class="line"> rdns = <span class="literal">false</span></span><br><span class="line"> pkinit_anchors = /etc/pki/tls/certs/ca-bundle.crt</span><br><span class="line"><span class="comment"># default_realm = EXAMPLE.COM</span></span><br><span class="line"> default_ccache_name = KEYRING:persistent:%&#123;uid&#125;</span><br><span class="line"></span><br><span class="line"> default_realm = XXX.COM</span><br><span class="line">[realms]</span><br><span class="line"><span class="comment"># EXAMPLE.COM = &#123;</span></span><br><span class="line"><span class="comment">#  kdc = kerberos.example.com</span></span><br><span class="line"><span class="comment">#  admin_server = kerberos.example.com</span></span><br><span class="line"><span class="comment"># &#125;</span></span><br><span class="line"></span><br><span class="line"> SZSANDSTONE.COM = &#123;</span><br><span class="line"> admin_server = dc.xxx.com</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> SZSANDSTONE.COM = &#123;</span><br><span class="line">  kdc = dc.xxx.com</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">[domain_realm]</span><br><span class="line"><span class="comment"># .example.com = EXAMPLE.COM</span></span><br><span class="line"><span class="comment"># example.com = EXAMPLE.COM</span></span><br><span class="line">szsandstone.com = XXX.COM</span><br><span class="line">.szsandstone.com = XXX.COM</span><br></pre></td></tr></table></figure></li>
-<li><p>配置NSS</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vim /etc/nsswitch.conf</span></span><br><span class="line">------------------------------------------------------------</span><br><span class="line">passwd:     files winbind</span><br><span class="line">group:      files winbind</span><br><span class="line">------------------------------------------------------------</span><br></pre></td></tr></table></figure></li>
-<li><p>加域</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#检查一下域是否正常</span></span><br><span class="line">[root@pubfileserver mnt]<span class="comment"># wninfo -t</span></span><br><span class="line">[root@pubfileserver mnt]<span class="comment"># wninfo -g</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#加域</span></span><br><span class="line">[root@pubfileserver mnt]<span class="comment"># net ads join -U administrator</span></span><br><span class="line">Enter administrator<span class="string">&#x27;s password:</span></span><br><span class="line"><span class="string">Using short domain name -- XXX</span></span><br><span class="line"><span class="string">Joined &#x27;</span>IDCFILESERVER<span class="string">&#x27; to dns domain &#x27;</span>XXX.com<span class="string">&#x27;</span></span><br><span class="line"><span class="string">No DNS domain configured for idcfileserver. Unable to perform DNS Update.</span></span><br><span class="line"><span class="string">DNS update failed: NT_STATUS_INVALID_PARAMETER</span></span><br></pre></td></tr></table></figure></li>
-<li><p>Samba配置</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">[root@pubfileserver mnt]<span class="comment"># cat /etc/samba/smb.conf</span></span><br><span class="line">[global]</span><br><span class="line">        workgroup = XXX</span><br><span class="line">        password server = dc.XXX.com</span><br><span class="line">        realm = XXX.COM</span><br><span class="line">        security = ads</span><br><span class="line">        passdb backend = tdbsam</span><br><span class="line">        idmap config * : range = 16777216-33554431</span><br><span class="line">        template shell = /bin/bash</span><br><span class="line">        kerberos method = secrets only</span><br><span class="line">        winbind use default domain = <span class="literal">true</span></span><br><span class="line">        winbind enum users = yes</span><br><span class="line">        winbind enum groups = yes</span><br><span class="line">        <span class="built_in">bind</span> interfaces only = yes</span><br><span class="line">        winbind offline logon = <span class="literal">false</span></span><br><span class="line">[homes]</span><br><span class="line">        comment = 个人目录</span><br><span class="line">        root preexec = /etc/samba/mkUserHome.sh %S</span><br><span class="line">        path = /mnt/02.home/%S</span><br><span class="line">        valid users = XXX\%S</span><br><span class="line">        browseable = NO</span><br><span class="line">        <span class="built_in">read</span> only = No</span><br><span class="line">        writeable = Yes</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>自动创建用户目录脚本</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@pubfileserver mnt]<span class="comment"># cat /etc/samba/mkUserHome.sh</span></span><br><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line"><span class="built_in">umask</span> 077</span><br><span class="line">user=<span class="variable">$1</span></span><br><span class="line"><span class="keyword">if</span> [ ! -d /mnt/02.home/<span class="variable">$user</span> ];<span class="keyword">then</span></span><br><span class="line">mkdir /mnt/02.home/<span class="variable">$user</span></span><br><span class="line">chmod 777 /mnt/02.home/<span class="variable">$user</span></span><br><span class="line">chown <span class="variable">$user</span>:<span class="string">&quot;domain users&quot;</span> /mnt/02.home/<span class="variable">$user</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>重启服务</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart smb nmb winbind</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -255,10 +175,9 @@
       <meta itemprop="name" content="Mr.zhang">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/30/exsi%E9%80%9F%E7%94%A8%E5%91%BD%E4%BB%A4%E5%92%8C%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">exsi速用命令和常见问题</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          exsi速用命令和常见问题
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -282,7 +201,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>修改root password</p>
+        <p>修改root password</p>
 <p>vicfg-user –url <a target="_blank" rel="noopener" href="https://esxi-host/sdk/webService">https://esxi-host/sdk/webService</a> –username root –password [old-pwd] -u root -e user -l root -o modify -p [new-pwd]</p>
 <p><strong>esxcli hardware</strong> – 想获取ESXi主机的硬件及配置信息时，esxcli硬件命名空间就能够派上用场了。</p>
 <p>esxcli hardware cpu list – 获取CPU信息（系列、型号以及缓存）</p>
@@ -816,112 +735,36 @@
 <p>只能从单个 vCPU 中受益。 而管理程序还需维护三个空闲 vCPU ， 占用本可用来处理其他工作的 CPU 周期。 n 如果主机不在 DRS 群集中，则将它添加到一个群集中。如果主机在 DRS 群集中，则增加主机数，并将一 个或多个虚拟机迁移到新主机上。 n 如有必要，请在主机上升级物理 CPU 或内核。</p>
 <p>n 使用最新版本的管理程序软件并启用 CPU 节省功能（例如 TCP 分段卸载、较大内存页面和巨型帧）。</p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/esxi/" rel="tag"># esxi</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/07/30/vcenter%E6%8C%82%E8%BD%BDiscsi%E9%97%AE%E9%A2%98/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Mr.zhang">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/30/vcenter%E6%8C%82%E8%BD%BDiscsi%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">venter挂载iscsi问题</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-07-30 14:44:15" itemprop="dateCreated datePublished" datetime="2021-07-30T14:44:15+08:00">2021-07-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-31 15:02:57" itemprop="dateModified" datetime="2021-08-31T15:02:57+08:00">2021-08-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Q：碰到vcenter挂载的ISCSI存储服务挂了以后，ISCSI存储也挂了，但是数据存储服务器起来后，vcenter上扫描存储依然没有起来。</p>
-<ul>
-<li><p>表现如下（灰色状态）：</p>
-<ul>
-<li>尝试将链路全部删掉，lun卷依然存在，如下</li>
-<li>将万兆网卡替换、刷新适配器、重新扫描存储依然不能解决</li>
-<li>ssh登录esxi上准备找找相关服务进程、分析，看看有没有remove或者kill这个存储lun的相关信息。</li>
-<li>心里打算重启设备（很头疼，上面都是生产环境，但没有可用资源用于迁移）</li>
-</ul>
-<img src="/2021/07/30/vcenter%E6%8C%82%E8%BD%BDiscsi%E9%97%AE%E9%A2%98/image-20210730144822118.png" class="" title="image-20210730144822118">
-
-<img src="/2021/07/30/vcenter%E6%8C%82%E8%BD%BDiscsi%E9%97%AE%E9%A2%98/image-20210730145358108.png" class="" title="image-20210730145358108"></li>
-<li><p>最后尝试</p>
-<ul>
-<li>发现卸载不掉，报错。想着，整个卷我都删除了怎么还在使用？最后突然灵光一动，应该是使用这个卷的虚拟机没关机！！</li>
-<li>最后把相关的虚拟机关机后，正常可以卸载</li>
-<li>然后添加链路、动态发现等ISCSI配置，正常！</li>
-<li>重新扫描存储、刷新一下就恢复了</li>
-<li>虚拟机系统是本地存储盘，但数据存放用的是ISCSI的存储卷</li>
-</ul>
-<img src="/2021/07/30/vcenter%E6%8C%82%E8%BD%BDiscsi%E9%97%AE%E9%A2%98/image-20210730145601172.png" class="" title="image-20210730145601172">
-
-<img src="/2021/07/30/vcenter%E6%8C%82%E8%BD%BDiscsi%E9%97%AE%E9%A2%98/image-20210730145908336.png" class="" title="image-20210730145908336">
-
-<img src="/2021/07/30/vcenter%E6%8C%82%E8%BD%BDiscsi%E9%97%AE%E9%A2%98/image-20210730150041455.png" class="" title="image-20210730150041455"></li>
-</ul>
-<p>PS：像这种问题会有各种各样的，前面主要是都没有报错，所以无法正确去判断，当然对于vcenter6.7的操作还是少了。多观察、多累计经验、多记录、多操作。</p>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/07/30/vcenter%E6%8C%82%E8%BD%BDiscsi%E9%97%AE%E9%A2%98/" rel="prev" title="venter挂载iscsi问题">
+      <i class="fa fa-chevron-left"></i> venter挂载iscsi问题
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/08/31/Samba%E5%8A%A0AD%E5%9F%9F%E7%AE%A1%E7%90%86/" rel="next" title="Samba加ad域管理">
+      Samba加ad域管理 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
@@ -974,6 +817,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#31%E3%80%81%E4%B8%BA%E4%B8%BB%E6%9C%BA%E5%BA%94%E7%94%A8Host-Profiles%E6%8F%90%E7%A4%BAcompliance%E9%94%99%E8%AF%AF"><span class="nav-number">1.</span> <span class="nav-text">31、为主机应用Host Profiles提示compliance错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#33%E3%80%81%E5%88%86%E6%9E%90%E3%80%81%E8%A7%A3%E5%86%B3IOPS%E5%AF%BC%E8%87%B4%E7%9A%84%E8%99%9A%E6%8B%9F%E6%9C%BA-%E5%AD%98%E5%82%A8%E6%80%A7%E8%83%BD%E4%B8%8B%E9%99%8D%E5%92%8C%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A3%81%E7%9B%98%E5%BB%B6%E6%97%B6%E8%BE%83%E5%A4%A7%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">33、分析、解决IOPS导致的虚拟机&#x2F;存储性能下降和虚拟机磁盘延时较大的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#34%E3%80%81%E4%B8%A2%E5%A4%B1%E6%88%96%E9%94%81%E5%AE%9A%E6%96%87%E6%A1%A3%E5%AF%BC%E8%87%B4%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%97%A0%E6%B3%95Power-On"><span class="nav-number">3.</span> <span class="nav-text">34、丢失或锁定文档导致虚拟机无法Power On</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#35%E3%80%81Storage-vMotion%E5%A4%B1%E8%B4%A5%EF%BC%9Alooking-for-lines-staring-with-%E2%80%9CCBTMotion%E2%80%9D"><span class="nav-number">4.</span> <span class="nav-text">35、Storage vMotion失败：looking for lines staring with “CBTMotion”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#36%E3%80%81%E6%B7%BB%E5%8A%A0LUN%E6%97%B6%E6%8F%90%E7%A4%BAHostDatastoreSystem-QueryVmfsDatastoreCreateOptions"><span class="nav-number">5.</span> <span class="nav-text">36、添加LUN时提示HostDatastoreSystem.QueryVmfsDatastoreCreateOptions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#37%E3%80%81vCenter-Converter%E6%8E%A8%E9%80%81Agent%E5%87%BA%E9%94%99%EF%BC%9AConverter-Agent-installer-uninstaller-Failed"><span class="nav-number">6.</span> <span class="nav-text">37、vCenter Converter推送Agent出错：Converter Agent installer&#x2F;uninstaller Failed</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#38%E3%80%81%E8%A7%A3%E5%86%B3%E5%9C%A8vSphere-5-0%E9%87%8C%E5%BC%80%E5%90%AFHA%E6%97%B6%EF%BC%8C%E6%8F%90%E7%A4%BA%EF%BC%9ADatastore-Heartbeating%E4%B8%8D%E8%B6%B3%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">7.</span> <span class="nav-text">38、解决在vSphere 5.0里开启HA时，提示：Datastore Heartbeating不足的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#40%E3%80%81%E7%BA%A2%E6%97%9732%E4%BD%8DLinux%E8%BF%9B%E5%85%A5%E7%B3%BB%E7%BB%9F%E6%97%B6%E6%8F%90%E7%A4%BA%E2%80%9Dudevu%E2%80%9D%E6%97%A0%E6%B3%95%E7%BB%A7%E7%BB%AD%E8%BF%9B%E5%85%A5%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">8.</span> <span class="nav-text">40、红旗32位Linux进入系统时提示”udevu”无法继续进入系统的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#60%E3%80%81%E5%9C%A8view%E6%A1%8C%E9%9D%A2%E4%B8%AD%EF%BC%8CWin7%E4%B8%8B%E5%AE%89%E8%A3%85%E5%87%BA%E7%8E%B0%E8%BD%AF%E4%BB%B6%E5%87%BA%E7%8E%B0%E2%80%9C%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%91%98%E8%AE%BE%E7%BD%AE%E4%BA%86%E7%B3%BB%E7%BB%9F%E7%AD%96%E7%95%A5%EF%BC%8C%E7%A6%81%E6%AD%A2%E8%BF%9B%E8%A1%8C%E6%AD%A4%E5%AE%89%E8%A3%85%E2%80%9D%E7%9A%84%E6%8F%90%E7%A4%BA"><span class="nav-number">9.</span> <span class="nav-text">60、在view桌面中，Win7下安装出现软件出现“系统管理员设置了系统策略，禁止进行此安装”的提示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#61%E3%80%81%E6%8C%81%E7%BB%AD%E8%BE%83%E9%AB%98%E7%9A%84-CPU-%E4%BD%BF%E7%94%A8%E6%83%85%E5%86%B5%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">10.</span> <span class="nav-text">61、持续较高的 CPU 使用情况的解决方案</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
